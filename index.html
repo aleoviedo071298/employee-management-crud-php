@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <title>Empleados</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <!-- Modal -->
+            <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form action="javascript:void(0);" method="post" onsubmit="aplicacion.Actualizar();">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="editarModalLabel">Editar empleado</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="idEditar" class="form-label">Id</label>
+                                    <input type="text" class="form-control" id="idEditar" aria-describedby="idEditar"
+                                        readonly style="color: red;">
+                                    <div id="idEditar" class="form-text">No se mostrara el id del empleado</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nombreEditar" class="form-label">Nombre del empleado</label>
+                                    <input type="text" class="form-control" id="nombreEditar"
+                                        aria-describedby="nombreEditar">
+                                    <div id="nombreEditar" class="form-text">No se mostrara el nombre del empleado</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="correoEditar" class="form-label">Correo</label>
+                                    <input type="email" class="form-control" id="correoEditar"
+                                        aria-describedby="correoEditar">
+                                    <div id="correoEditar" class="form-text">No se mostrara el correo</div>
+                                </div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Actualizar
+                                    empleado</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>Agregar empleado</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="javascript:void(0);" method="post" onsubmit="aplicacion.Agregar();">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre del empleado</label>
+                                <input type="text" class="form-control" id="nombre" aria-describedby="nombre">
+                                <div id="nombre" class="form-text">No se mostrara el nombre del empleado</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="correo" aria-describedby="correo" required>
+                                <div id="correo" class="form-text">No se mostrara el correo</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar empleado</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-7">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="empleados">
+                        <!-- datos -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
