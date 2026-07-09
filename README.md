@@ -1,7 +1,15 @@
 # Employee Management System (CRUD)
 
-A simple Employee Management System built with PHP, MySQL, JavaScript (Fetch API),
-and Bootstrap 5.
+> Full CRUD for employee records using PHP, MySQL, and Fetch API — no page reloads.
+
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+## About
+
+A lightweight employee management system with full CRUD operations. The frontend communicates with a PHP REST-like backend via the Fetch API using JSON — no page reloads for any action. Styled with Bootstrap 5 for a clean, responsive UI.
 
 ## Features
 
@@ -9,34 +17,28 @@ and Bootstrap 5.
 - **Read** — list all employees in a responsive table.
 - **Update** — edit employee details via a Bootstrap modal.
 - **Delete** — remove employees with a single click.
-- **Responsive design** — optimized for mobile and desktop.
-
-## Tech Stack
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+), Bootstrap 5
-- **Backend**: PHP 7/8
-- **Database**: MySQL (`mysqli`)
-- **Architecture**: REST-like API communicating via JSON
+- **No page reloads** — all operations use `fetch()` + JSON.
+- **Responsive** — works on mobile and desktop.
 
 ## Project Structure
 
 ```
-index.html             Main user interface
-main.js                Frontend logic and API communication
-empleados/index.php    Backend API (CRUD operations)
+employee-management-crud-php/
+├── index.html           Main user interface
+├── main.js              Frontend logic and Fetch API calls
+└── empleados/
+    └── index.php        Backend API (handles all CRUD via POST/GET)
 ```
 
 ## Setup
 
-### Prerequisites
-- XAMPP or any local server with PHP and MySQL support.
+**Requirements:** PHP 7.4+/8.x, MySQL, Apache (XAMPP/Laragon).
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/aleoviedo071298/employee-management-crud-php.git
-   ```
-2. Create a database named `empleados` and run:
+```bash
+git clone https://github.com/aleoviedo071298/employee-management-crud-php.git
+```
+
+1. Create a database named `empleados` and run:
    ```sql
    CREATE TABLE `empleados` (
      `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -45,15 +47,9 @@ empleados/index.php    Backend API (CRUD operations)
      PRIMARY KEY (`id`)
    );
    ```
-3. Check the connection settings in `empleados/index.php`:
-   ```php
-   $servidor = "localhost";
-   $usuario = "root";
-   $contraseña = "";
-   $baseDatos = "empleados";
-   ```
-4. Place the project folder in your `htdocs` directory and open `http://localhost/employee-management-crud-php/` in your browser.
+2. Check connection settings in `empleados/index.php` — defaults: `host=localhost`, `user=root`, no password.
+3. Place the folder in `htdocs` and open `http://localhost/employee-management-crud-php/`.
 
-## Author
+---
 
-**Alejandro Oviedo**
+**Alejandro Oviedo** · [LinkedIn](https://www.linkedin.com/in/aleoviedo071298/) · [GitHub](https://github.com/aleoviedo071298)
